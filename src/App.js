@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import FormComponent from './components/Form.component';
 import axios from 'axios';
 import SongComponent from './components/Song.component';
+import ArtistComponent from './components/Artist.component';
 
 
 function App() {
@@ -45,7 +46,9 @@ function App() {
         <div className="row">
           
           <div className="col-md-6">
-
+            <ArtistComponent
+            apiArtistResultState={apiArtistResult}
+            />
           </div>
 
           <div className="col-md-6">
