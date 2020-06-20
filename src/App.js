@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import FormComponent from './components/Form.component';
+
 
 function App() {
+
+  const [formSearched, setFormSearchedState] = useState({});
+
+  const [apiResult, setApiResultState] = useState([]);
+
+  useEffect(() => {
+    const checkingApi = async () =>{
+      if(formSearched.artist === '' || formSearched.song === '') return;
+      
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <FormComponent
+      setFormSearchedState={setFormSearchedState}
+      />
+    </>
   );
 }
 
